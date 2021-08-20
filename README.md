@@ -1,17 +1,30 @@
-# Template para desenvolvimento e entrega de NAC
+# Projeto de estação meteorológica 
 
-Esse é um guia simples, o grupo pode e deve modificar o template conforme necessidade. 
-
-# Nome do projeto
-
-**nome dos alunos:** 
+**Nome dos alunos:**
+<ul>
+	<li>João Paulo Pereira Macêdo</li>
+	<li>Karen Martins Silveira</li>
+	<li>Lucas Pelosi de Almeida</li>
+	<li>Mariana Alves de Oliveira Ribeiro</li>
+	<li>Tiago de Brito Ferreira</li>
+	<li>Vitor Mendes Olivério</li>
+</ul>                    
 
 **Turma:**
+2TDSG
 
 **Ano:**
+2021
 
 ## Objetivo / descrição do Projeto
 
+Aplicação IoT de estação meteorológica desenvolvido para Smart Cities utilizando o microcontrolador Arduino Uno.
+Dispositivos IoT utilizados:
+<ul>
+	<li>Fotoresistor LDR:  </li>
+	<li>Sensor de temperatura TMP</li>
+	<li>Frequencímetro</li>
+</ul>
 Explique de forma clara qual o objeto deste projeto, para que serve e comente as principais tecnologias utilizadas. 
 
 ## Diagrama do projeto
