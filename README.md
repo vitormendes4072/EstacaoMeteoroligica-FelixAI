@@ -18,34 +18,53 @@
 
 ## Objetivo / descrição do Projeto
 
-Aplicação IoT de estação meteorológica desenvolvido para Smart Cities utilizando o microcontrolador Arduino Uno.
-Dispositivos IoT utilizados:
+<p>O projeto foi desenvolvido para a matéria de Disruptive Architectures IOT and IA, do curso de Análise e Desenvolvimento de Sistemas da FIAP.</p>
+<p>O intuito do projeto é uma aplicação IoT de estação meteorológica desenvolvido para Smart Cities, na qual faz a coleta de informações por meio de sensores e faz o envio via serial para um um fluxo no node-red que publica nos tópicos de cada sensor via MQTT e exibe em um dashboard, caso a velocidade do vento seja maior que 80Km/h é enviado um alerta via twitter.</p> 
+
+<b>Dispositivos IoT utilizados:</b>
 <ul>
-	<li>Fotoresistor LDR:  </li>
-	<li>Sensor de temperatura TMP</li>
-	<li>Frequencímetro</li>
+	<li>Arduino Uno</li>
+	<li>Fotoresistor LDR: mede a intensidade da luz</li>
+	<li>Sensor de temperatura TMP: mede a temperatura</li>
+	<li>Frequencímetro: mede a frequência de voltas por segundo</li>
 </ul>
-Explique de forma clara qual o objeto deste projeto, para que serve e comente as principais tecnologias utilizadas. 
 
-## Diagrama do projeto
+## Arquitetura do projeto
 
-Adicione uma ou mais fotos do projeto, pode ser uma imagem da arquitetura, do circuito eletrônico do Flow desenvolvido. 
-
-<img src="/imagem.jpg" width="550">
+<img src="/estacao_meteorologica_arquitetura.jpg" width="550">
 
 
-## Como usar 
+## Sotware e plataforma necessários
+<ul>
+	<li>SimulIDE</li>
+	<li>Node-red</li>
+</ul>
+
+## Como instalar e configurar 
 
 Explique como rodar o seu projeto. Quais programas instalar, como configurar... 
+<b>Passos para utilizar o SimulIDE:</b>
+<ol>
+<li>Faça o download</li>
+	
+	https://www.simulide.com/p/downloads.html
+<li>Descompacte o arquivo zip</li>
+<li>O aplicativo estará na pasta bin</li>
+</ol>
 
-* Pode ser utilizado marcadores
-* Para ajudar na formatação
-
-Ou qualquer outra tabulação:
-
-- [x] Youtube
-- [ ] Facebook 
-- [x] Instagram
+<b>Passos para utilizar o Node-red:</b>
+<ol>
+<li>É necessário a instalação do node.js LTS</li>
+	
+	https://nodejs.org/en/
+<li>Abra o cmd e digite:</li>
+	
+	npm install -g --unsafe-perm node-red
+<li>Para acessar o servidor, acesso no seu browser:</li>
+	
+	http://localhost:1880
+	
+</ol>
 
 Pode adicionar algum trecho de código, por exemplo para clonar esse repositório:
 
@@ -53,7 +72,7 @@ Pode adicionar algum trecho de código, por exemplo para clonar esse repositóri
     git clone https://github.com/arnaldojr/templatenac
     cd templatenac
     ls
-
+    
 
 ## Link de vídeo demonstração
 
@@ -64,5 +83,5 @@ Adicione o link para assistir ao vídeo do projeto funcionando.
 
 ### Referências 
 
-* [mastering-markdown](https://guides.github.com/features/mastering-markdown/)
-* [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+* [Node-red](https://nodered.org/docs/getting-started/local)
+* [SimulIDE](https://www.simulide.com/index.html)
