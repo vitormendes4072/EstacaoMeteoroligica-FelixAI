@@ -16,6 +16,7 @@ float vout = 0;
 float adc = 0;
 int radius = 147;  // Raio do anemometro
 const float pi = 3.14159265;
+int period = 1000;
 
 //Variáveis
 int valorSensorLuz  = 0;
@@ -30,6 +31,7 @@ float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07; //valore
 volatile unsigned long cont = 0;
 unsigned long tempo = 0;
 float speedwind = 0;
+unsigned int RPM = 0;
 
 void setup(){
 	pinMode(sensorTemp, INPUT);
@@ -60,10 +62,11 @@ void loop() {
 	serializeJson(json, Serial);
 	
 	// Validação de interrupção para o frequencimetro
-	if( (millis() - tempo) > 999) {
+	if( (millis() - tempo) > period) {
 		tempo = millis();
 		Serial.print("Hertz: ");
 		Serial.println(cont);
+		RPMcalc();
 		velocidadeVento();
 		cont = 0;
 	}
@@ -74,9 +77,14 @@ void interrupcaoPino2(){
   	cont++;
 }
 
+// Calcular RPM (rotações por minuto)
+void RPMcalc(){
+	RPM=((cont)*60)/(period/1000);  
+}
+
 //função que calcula a velocidade do vento em km/h
 void velocidadeVento(){
-	speedwind = (((4 * pi * radius * cont)/60) / 1000)*3.6;
+	speedwind = (((4 * pi * radius * RPM)/60) / 1000)*3.6;
 	Serial.print("KM/H: ");
 	Serial.println(speedwind);
 }
