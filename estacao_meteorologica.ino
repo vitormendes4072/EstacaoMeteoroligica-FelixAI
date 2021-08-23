@@ -14,6 +14,8 @@ const float r = 10000.0;
 const int vcc = 5;
 float vout = 0;
 float adc = 0;
+int radius = 147;  // Raio do anemometro
+const float pi = 3.14159265;
 
 //Variáveis
 int valorSensorLuz  = 0;
@@ -25,11 +27,15 @@ int Vo;
 float R1 = 10000;
 float logR2, R2, T, Tc, Tf, temp, templast, luxlast;
 float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07; //valores constante para calculo
-
+volatile unsigned long cont = 0;
+unsigned long tempo = 0;
+float speedwind = 0;
 
 void setup(){
 	pinMode(sensorTemp, INPUT);
 	Serial.begin(115200);
+	pinMode(2,INPUT_PULLUP);   //  Configura o pino 2 do arduino como entrada com resistor de pullup interno (assim não precisa mais colocar o resistor no pino)
+	attachInterrupt(digitalPinToInterrupt(2),interrupcaoPino2,RISING);  //  Configura o pino2 como interrupção externa do tipo Rising (borda de LOW para HIGH)
 }
 
 void loop() {
@@ -46,13 +52,33 @@ void loop() {
 	l = pow(127410/rLdr,elevado);
 	temp = readTemp(sensorTemp);
 	printTemp(temp);
-	}
 	
 	json["topic1"] = "lux";
 	json["payload1"] = l;
 	json["topic2"] = "temp";
 	json["payload2"] = temp;
 	serializeJson(json, Serial);
+	
+	// Validação de interrupção para o frequencimetro
+	if( (millis() - tempo) > 999) {
+		tempo = millis();
+		Serial.print("Hertz: ");
+		Serial.println(cont);
+		velocidadeVento();
+		cont = 0;
+	}
+}
+
+//funcão de interrupção do pino2, é executado quando o botao do pino2 pressionado
+void interrupcaoPino2(){
+  	cont++;
+}
+
+//função que calcula a velocidade do vento em km/h
+void velocidadeVento(){
+	speedwind = (((4 * pi * radius * cont)/60) / 1000)*3.6;
+	Serial.print("KM/H: ");
+	Serial.println(speedwind);
 }
 
 //função que faz leitura da temperatura e retorna o valor em graus celcius
@@ -72,3 +98,4 @@ void printTemp(float Tc){
 	Serial.print(Tc);
 	Serial.println(" C");   
 }
+
