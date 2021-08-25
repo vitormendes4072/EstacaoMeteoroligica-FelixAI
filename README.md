@@ -31,7 +31,7 @@
 
 ## Arquitetura do projeto
 
-<img src="/estacao_meteorologica_arquitetura.jpg" width="550">
+<img src="https://user-images.githubusercontent.com/62014653/130795367-226e9f63-507f-4d18-aaf3-24a76870a9f8.png" width="90%">
 
 
 ## Sotware e plataforma necessários
