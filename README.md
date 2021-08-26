@@ -66,8 +66,7 @@
 <img src="nodes-node-red.jpg">
 
 ## Arquitetura do projeto
-<img src="https://user-images.githubusercontent.com/62014653/131036609-5be5094f-ce84-4e74-aaed-f479ecbdb527.png
-" width="100%">
+<img src="https://user-images.githubusercontent.com/62014653/131036609-5be5094f-ce84-4e74-aaed-f479ecbdb527.png" width="100%">
 <h3>Conexões do arduino e componentes: </h3>
 <ul>
 	<li><b>Porta 2: </b></li>
