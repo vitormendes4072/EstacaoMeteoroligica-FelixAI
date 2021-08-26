@@ -19,7 +19,7 @@
 ## Objetivo / descrição do Projeto
 
 <p>O projeto foi desenvolvido para a matéria de Disruptive Architectures IOT and IA, do curso de Análise e Desenvolvimento de Sistemas da FIAP.</p>
-<p>O intuito do projeto é uma aplicação IoT de estação meteorológica desenvolvido para Smart Cities, na qual faz a coleta de informações por meio de sensores e faz o envio via serial para um um fluxo no node-red que publica nos tópicos de cada sensor via MQTT e exibe em um dashboard, caso a velocidade do vento seja maior que 80Km/h é enviado um alerta via twitter.</p>
+<p>O intuito do projeto é uma aplicação IoT de estação meteorológica desenvolvido para Smart Cities, na qual faz a coleta de informações por meio de sensores e faz o envio via serial para um fluxo no node-red que publica nos tópicos de cada sensor via MQTT e exibe em um dashboard, caso a velocidade do vento seja maior que 80Km/h é enviado um alerta via twitter.</p>
 
 <b>Dispositivos IoT utilizados:</b>
 <ul>
@@ -62,27 +62,55 @@
 <b>Download dos nós no node-red:</b>
 <p>Clique no canto superior direito, depois em "Manage palette"</p>
 <img src="cofigurations-node-red.jpg ">
-<p><b>Faça a instalação desses nós:</b></p>
+<b>Faça a instalação desses nós:</b>
 <img src="nodes-node-red.jpg">
 
 ## Arquitetura do projeto
-
 <img src="https://user-images.githubusercontent.com/62014653/130795367-226e9f63-507f-4d18-aaf3-24a76870a9f8.png" width="90%">
+<h3>Conexões do arduino e componentes: </h3>
+<ul>
+	<li><b>Porta 2: </b></li>
+		<ul>
+			<li><b>Clock</b> (encontrado na área Sources): simples fonte que emite uma frequencia baseado na frequencia setada nas propriedades.</li>
+			<li><b>Frequencimeter</b> (encontrado na área Meters): mede o sinal de frequencia emitida pelo Clock.</li>
+		</ul>
+	<li><b>Porta A1: </b> </li>
+		<ul>
+			<li><b>LDR</b> (encontrado na área Passive): fotoresistor mede a intensidade da luz</li>
+			<li><b>Resistor</b> (encontrado na área Meters): resistência de 10kΩ setada nas propriedades</li>
+			<li><b>Ground</b> (encontrado na área Sources): fonte de zero voltagem</li>
+			<li><b>Rail</b> (encontrado na área Sources): fonte simples de voltagem, voltagem de 5V setada nas propriedades</li>
+		</ul>
+	<li><b>Porta A0: </b> </li>
+		<ul>
+			<li><b>Termistor</b> (encontrado na área Passive): sensor TMP que mede a temperatura;</li>
+			<li><b>Resistor</b> (encontrado na área Meters): resistência de 10kΩ setada nas propriedades;</li>
+			<li><b>Ground</b> (encontrado na área Sources): fonte de zero voltagem;</li>
+			<li><b>Rail</b> (encontrado na área Sources): fonte simples de voltagem, voltagem de 5V setada nas propriedades.</li>
+		</ul>
+	<li><b>Porta serial: </b>
+		<ul>
+			<li>Para acessá-la clique com a direita do mouse no arduino, depois em "Open Serial Port."</li>
+			<li>Para utilizar ela é só clicar no botão "Open" do lado esquerdo.</li>
+			<li>Ela abrirá a porta serial no seu computador, provavelmente COM3(porta de entrada) e COM4(porta de saída no
+				)</li>
+		</ul>
+		
 <h3>Fluxo do Node-Red </h3>
 <img src="FluxoNodeRed.png" width="60%">
 <h3>Nós: </h3>
 <ul>
 	<li><b>Serial In:</b> A COM4 está recebendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde</li>
-	<li><b>JSON:</b> O nó JSON está recebendo o arquivo JSON gerado pelo código do Arduino</li>
-	<li><b>Change/Set:</b> Filtra as informações do json (Luminosidade, Temperatura, Velocidade do vento)</li>
-	<li><b>Mqtt Out:</b> recebe a mensagem filtrada e publica as mensagens com o contéudo</li>
-	<li><b>Mqtt In:</b> conecta com o Mqtt Out e faz o envio para o Gauge</li>
-	<li><b>Gauge:</b> adiciona uma interface Gauge para exibir as informações em um dashboard</li>
-	<h3>Dados exibidos</h3>
+	<li><b>JSON:</b> O nó JSON está recebendo o arquivo JSON gerado pelo código do Arduino;</li>
+	<li><b>Change/Set:</b> Filtra as informações do json (Luminosidade, Temperatura, Velocidade do vento);</li>
+	<li><b>Mqtt Out:</b> recebe a mensagem filtrada e publica as mensagens com o contéudo;</li>
+	<li><b>Mqtt In:</b> conecta com o Mqtt Out e faz o envio para o Gauge;</li>
+	<li><b>Gauge:</b> adiciona uma interface Gauge para exibir as informações em um dashboard.</li>
+	<h3>Dados exibidos: </h3>
 	<ul>
-		<li>Luminosidade</li>
-		<li>Temperatura</li>
-		<li>Velocidade do vento</li>
+		<li>Luminosidade;</li>
+		<li>Temperatura;</li>
+		<li>Velocidade do vento.</li>
 	</ul>
 </ul>
 
