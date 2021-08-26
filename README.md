@@ -2,12 +2,12 @@
 
 **Nome dos alunos:**
 <ul>
-	<li>João Paulo Pereira Macêdo</li>
-	<li>Karen Martins Silveira</li>
-	<li>Lucas Pelosi de Almeida</li>
-	<li>Mariana Alves de Oliveira Ribeiro</li>
-	<li>Tiago de Brito Ferreira</li>
-	<li>Vitor Mendes Olivério</li>
+	<li>João Paulo Pereira Macêdo - RM: 86353</li>
+	<li>Karen Martins Silveira - RM: 85282</li>
+	<li>Lucas Pelosi de Almeida - RM: 85987</li>
+	<li>Mariana Alves de Oliveira Ribeiro - RM: 86125</li>
+	<li>Tiago de Brito Ferreira - RM: 84267</li>
+	<li>Vitor Mendes Olivério - RM: 84609</li>
 </ul>                    
 
 **Turma:**
@@ -19,7 +19,7 @@
 ## Objetivo / descrição do Projeto
 
 <p>O projeto foi desenvolvido para a matéria de Disruptive Architectures IOT and IA, do curso de Análise e Desenvolvimento de Sistemas da FIAP.</p>
-<p>O intuito do projeto é uma aplicação IoT de estação meteorológica desenvolvido para Smart Cities, na qual faz a coleta de informações por meio de sensores e faz o envio via serial para um um fluxo no node-red que publica nos tópicos de cada sensor via MQTT e exibe em um dashboard, caso a velocidade do vento seja maior que 80Km/h é enviado um alerta via twitter.</p> 
+<p>O intuito do projeto é uma aplicação IoT de estação meteorológica desenvolvido para Smart Cities, na qual faz a coleta de informações por meio de sensores e faz o envio via serial para um um fluxo no node-red que publica nos tópicos de cada sensor via MQTT e exibe em um dashboard, caso a velocidade do vento seja maior que 80Km/h é enviado um alerta via twitter.</p>
 
 <b>Dispositivos IoT utilizados:</b>
 <ul>
@@ -37,7 +37,6 @@
 
 ## Como instalar e configurar 
 
-Explique como rodar o seu projeto. Quais programas instalar, como configurar... 
 <b>Passos para utilizar o SimulIDE:</b>
 <ol>
 <li>Faça o download</li>
@@ -60,34 +59,48 @@ Explique como rodar o seu projeto. Quais programas instalar, como configurar...
 	http://localhost:1880
 	
 </ol>
+<b>Download dos nós no node-red:</b>
+<p>Clique no canto superior direito, depois em "Manage palette"</p>
+<img src="cofigurations-node-red.jpg ">
+<p><b>Faça a instalação desses nós:</b></p>
+<img src="nodes-node-red.jpg">
 
 ## Arquitetura do projeto
 
 <img src="https://user-images.githubusercontent.com/62014653/130795367-226e9f63-507f-4d18-aaf3-24a76870a9f8.png" width="90%">
 <h3>Fluxo do Node-Red </h3>
-<img src="FluxoNodeRed.png">
-<figcaption>A COM4 está recendendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde</figcaption>
-<p>O nó JSON está recebendo o arquivo JSON gerado pelo código do Arduino</p>
-<p>Nó Change/Set está recebendo o msg.payload e está filtrando e enviando as informações para o MQTT</p>
-<p>MQTT OUT vai receber a mensagem filtrada e vai publicar as mensagens com o contéudo</p>
-<p>O MQTT IN está conectado com o MQTT OUT e faz o envio no dashboard</p>
+<img src="FluxoNodeRed.png" width="60%">
+<h3>Nós: </h3>
 <ul>
-	<li>Luminosidade</li>
-	<li>Temperatura</li>
-	<li>Velocidade do vento</li>
-</ul>
-<ul>
-	<li>node-red-dashboard</li>
-	<li>node-red-node-serialport</li>
+	<li><b>Serial In:</b> A COM4 está recebendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde</li>
+	<li><b>JSON:</b> O nó JSON está recebendo o arquivo JSON gerado pelo código do Arduino</li>
+	<li><b>Change/Set:</b> Filtra as informações do json (Luminosidade, Temperatura, Velocidade do vento)</li>
+	<li><b>Mqtt Out:</b> recebe a mensagem filtrada e publica as mensagens com o contéudo</li>
+	<li><b>Mqtt In:</b> conecta com o Mqtt Out e faz o envio para o Gauge</li>
+	<li><b>Gauge:</b> adiciona uma interface Gauge para exibir as informações em um dashboard</li>
+	<h3>Dados exibidos</h3>
+	<ul>
+		<li>Luminosidade</li>
+		<li>Temperatura</li>
+		<li>Velocidade do vento</li>
+	</ul>
 </ul>
 
-Pode adicionar algum trecho de código, por exemplo para clonar esse repositório:
-
-    cd /home/iot
-    git clone https://github.com/arnaldojr/templatenac
-    cd templatenac
-    ls
-    
+## Para clonar o projeto
+<ol>
+<li>Faça o download do Git Bash</li>
+	
+	https://git-scm.com/downloads
+<li>Abra o Git Bash e digite<li>
+	
+	cd /home/iot
+	ls -l
+	git clone https://github.com/vitormendes4072/EstacaoMeteoroligica-FelixAI
+	ls -l
+</ol>
+<p>Use o comando "cd" para trocar até o diretório que vc deseja fazer o clone.</p>
+<p>Use o comando "ls -l" para listar os arquivos que estão no diretório atual.</p>
+<p>Use o comando "git clone (link do repositório)" para fazer um clone do repositório.</p>
 
 ## Link de vídeo demonstração
 
