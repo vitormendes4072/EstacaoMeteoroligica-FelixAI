@@ -66,7 +66,8 @@
 <img src="nodes-node-red.jpg">
 
 ## Arquitetura do projeto
-<img src="https://user-images.githubusercontent.com/62014653/130795367-226e9f63-507f-4d18-aaf3-24a76870a9f8.png" width="90%">
+<img src="https://user-images.githubusercontent.com/62014653/131036609-5be5094f-ce84-4e74-aaed-f479ecbdb527.png
+" width="100%">
 <h3>Conexões do arduino e componentes: </h3>
 <ul>
 	<li><b>Porta 2: </b></li>
@@ -96,8 +97,6 @@
 				)</li>
 		</ul>
 		
-<h3>Fluxo do Node-Red </h3>
-<img src="FluxoNodeRed.png" width="60%">
 <h3>Nós: </h3>
 <ul>
 	<li><b>Serial In:</b> A COM4 está recebendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde</li>
