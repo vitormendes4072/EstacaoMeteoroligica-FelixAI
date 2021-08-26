@@ -2,13 +2,18 @@
 
 Esse é um guia simples, o grupo pode e deve modificar o template conforme necessidade. 
 
-# Nome do projeto
+# ESTAÇÃO METEOROLÓGICA
 
-**nome dos alunos:** 
+**nome dos alunos: João Paulo Pereira Macêdo - RM86353
+Lucas Pelosi de Almeida - RM85987
+Tiago de Brito Ferreira - RM 84267
+Karen Martins Silveira - RM 85282
+Vitor Mendes Olivério - RM 84609
+Mariana Alves de Oliveira Ribeiro - RM 86125
 
-**Turma:**
+**Turma: 2TDSG
 
-**Ano:**
+**Ano:** 2°ano - 4° semestre
 
 ## Objetivo / descrição do Projeto
 
@@ -46,7 +51,7 @@ Pode adicionar algum trecho de código, por exemplo para clonar esse repositóri
 
 Adicione o link para assistir ao vídeo do projeto funcionando.
 
-[Link para o video youtube](https://www.youtube.com/watch?v=xva71wynxS0)
+[Link para o video youtube](https://www.youtube.com/watch?v=toQmPJUypIU)
 
 
 ### Referências 
