@@ -29,11 +29,6 @@
 	<li>Frequencímetro: mede a frequência de voltas por segundo</li>
 </ul>
 
-## Arquitetura do projeto
-
-<img src="https://user-images.githubusercontent.com/62014653/130795367-226e9f63-507f-4d18-aaf3-24a76870a9f8.png" width="90%">
-
-
 ## Sotware e plataforma necessários
 <ul>
 	<li>SimulIDE</li>
@@ -65,6 +60,26 @@ Explique como rodar o seu projeto. Quais programas instalar, como configurar...
 	http://localhost:1880
 	
 </ol>
+
+## Arquitetura do projeto
+
+<img src="https://user-images.githubusercontent.com/62014653/130795367-226e9f63-507f-4d18-aaf3-24a76870a9f8.png" width="90%">
+<h3>Fluxo do Node-Red </h3>
+<img src="FluxoNodeRed.png">
+<figcaption>A COM4 está recendendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde</figcaption>
+<p>O nó JSON está recebendo o arquivo JSON gerado pelo código do Arduino</p>
+<p>Nó Change/Set está recebendo o msg.payload e está filtrando e enviando as informações para o MQTT</p>
+<p>MQTT OUT vai receber a mensagem filtrada e vai publicar as mensagens com o contéudo</p>
+<p>O MQTT IN está conectado com o MQTT OUT e faz o envio no dashboard</p>
+<ul>
+	<li>Luminosidade</li>
+	<li>Temperatura</li>
+	<li>Velocidade do vento</li>
+</ul>
+<ul>
+	<li>node-red-dashboard</li>
+	<li>node-red-node-serialport</li>
+</ul>
 
 Pode adicionar algum trecho de código, por exemplo para clonar esse repositório:
 
