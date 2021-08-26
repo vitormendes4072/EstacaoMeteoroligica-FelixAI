@@ -91,16 +91,23 @@
 <li>Faça o download do Git Bash</li>
 	
 	https://git-scm.com/downloads
-<li>Abra o Git Bash e digite<li>
+<li>Abra o Git Bash e digite:</li>
 	
-	cd /home/iot
-	ls -l
-	git clone https://github.com/vitormendes4072/EstacaoMeteoroligica-FelixAI
-	ls -l
-</ol>
+	cd /Users/samsung/Documents
 <p>Use o comando "cd" para trocar até o diretório que vc deseja fazer o clone.</p>
+	
+	ls -l
 <p>Use o comando "ls -l" para listar os arquivos que estão no diretório atual.</p>
+	
+	git clone https://github.com/vitormendes4072/EstacaoMeteoroligica-FelixAI
 <p>Use o comando "git clone (link do repositório)" para fazer um clone do repositório.</p>
+	
+	ls -l
+<p>Use o comando "ls -l" para listar os arquivos e cheque se fez o clone do projeto.</p>
+</ol>
+
+
+
 
 ## Link de vídeo demonstração
 
