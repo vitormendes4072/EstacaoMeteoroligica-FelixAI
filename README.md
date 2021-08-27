@@ -63,20 +63,28 @@
 <p>Clique no canto superior direito, depois em "Manage palette"</p>
 <img src="Configurations/cofigurations-node-red.jpg ">
 <b>Faça a instalação desses nós:</b>
-<img src="nodes-node-red.jpg">
+<img src="Configurations/nodes-node-red.jpg">
 <b>Configuração do nó do Twitter</b>
 <ol>
-	<li>Preencha seus dados e crie uma conta de desenvolvedor no Twitter;</li>
+<li>Preencha seus dados e crie uma conta de desenvolvedor no Twitter;</li>
+	
 	
 		http://developer.twitter.com/
-	<li>Depois de criada, clique no botão "Create an app" no canto superior direito;</li>
-	<li>Selecione a opção "Hobbyist", depois "Making a bot";</li>
-	<li>Preencha com os dados requeridos;</li>
-	<li>Faça comentários de como você usará o Twitter;</li>
-	<li>Aceite os termos de uso;</li>
-	<li>Clique de novo em "Create an app";</li>
-	<li>Dê um nome ao seu App;</li>
-	<li>Em "Keys & Tokens" copie os 3 dados informados();</li>
+	
+	
+	
+<li>Depois de criada, clique no botão "Create an app" no canto superior direito;</li>
+<li>Selecione a opção "Hobbyist", depois "Making a bot";</li>
+<li>Preencha com os dados requeridos;</li>
+<li>Faça comentários de como você usará o Twitter;</li>
+<li>Aceite os termos de uso;</li>
+<li>Clique de novo em "Create an app";</li>
+<li>Dê um nome ao seu App;</li>
+<li>Em "Keys & Tokens" copie os 3 dados informados;</li>
+	<img src="Configurations/Key&Tokens-Twitter.jpg">
+<li>No node-red dê um duplo clique no nó Twitter Out e clique no lápis do lado direito do Twitter ID;</li>
+<li>Informe o seu @ do Twitter, suas Keys e seu Token de acesso, e clique em update;</li>
+	<img src="Configurations/credentials-twitter.jpg">
 </ol>
 
 ## Arquitetura do projeto
