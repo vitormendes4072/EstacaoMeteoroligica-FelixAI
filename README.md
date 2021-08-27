@@ -61,9 +61,23 @@
 </ol>
 <b>Download dos nós no node-red:</b>
 <p>Clique no canto superior direito, depois em "Manage palette"</p>
-<img src="cofigurations-node-red.jpg ">
+<img src="Configurations/cofigurations-node-red.jpg ">
 <b>Faça a instalação desses nós:</b>
 <img src="nodes-node-red.jpg">
+<b>Configuração do nó do Twitter</b>
+<ol>
+	<li>Preencha seus dados e crie uma conta de desenvolvedor no Twitter;</li>
+	
+		http://developer.twitter.com/
+	<li>Depois de criada, clique no botão "Create an app" no canto superior direito;</li>
+	<li>Selecione a opção "Hobbyist", depois "Making a bot";</li>
+	<li>Preencha com os dados requeridos;</li>
+	<li>Faça comentários de como você usará o Twitter;</li>
+	<li>Aceite os termos de uso;</li>
+	<li>Clique de novo em "Create an app";</li>
+	<li>Dê um nome ao seu App;</li>
+	<li>Em "Keys & Tokens" copie os 3 dados informados();</li>
+</ol>
 
 ## Arquitetura do projeto
 <img src="https://user-images.githubusercontent.com/62014653/131036609-5be5094f-ce84-4e74-aaed-f479ecbdb527.png" width="100%">
@@ -98,13 +112,18 @@
 		
 <h3>Nós: </h3>
 <ul>
-	<li><b>Serial In:</b> A COM4 está recebendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde</li>
-	<li><b>JSON:</b> O nó JSON está recebendo o arquivo JSON gerado pelo código do Arduino;</li>
-	<li><b>Change/Set:</b> Filtra as informações do json (Luminosidade, Temperatura, Velocidade do vento);</li>
-	<li><b>Mqtt Out:</b> recebe a mensagem filtrada e publica as mensagens com o contéudo;</li>
-	<li><b>Mqtt In:</b> conecta com o Mqtt Out e faz o envio para o Gauge;</li>
-	<li><b>Gauge:</b> adiciona uma interface Gauge para exibir as informações em um dashboard.</li>
-	<h3>Dados exibidos: </h3>
+	<li><b>Serial In:</b> A COM4 está recebendo a conexão serial da COM3 que foi aberta no serial do Arudino dentro do SimulIde;</li>
+	<li><b>Delay:</b> Faz um delay de 3 segundos;</li>
+	<li><b>JSON:</b> O nó JSON está recebendo uma String JSON gerada pelo código do Arduino e converte em um Objeto JavaScript;</li>
+	<li><b>Change:</b> Filtra as informações do Objeto JavaScript (Luminosidade, Temperatura, Velocidade do vento);</li>
+	<li><b>Mqtt Out:</b> Recebe a mensagem filtrada e publica as mensagens com o contéudo em um MQTT Broker;</li>
+	<li><b>Mqtt In:</b> Conecta com o Mqtt Broker e subscreve para mensagens de um tópico específico;</li>
+	<li><b>Gauge:</b> Adiciona uma interface Gauge para exibir as informações(Luminosidade, Temperatura, Velocidade do vento) em um dashboard.</li>
+	<li><b>Function:</b> Faz uma validação caso a velocidade do vento passe de 80Km/h será retornado um String com um aviso;</li>
+	<li><b>Switch:</b> Faz um filtro, caso o Objeto recebido seja do tipo String ele faz o envio ao Twitter Out, caso o Objeto seja do tipo Number ele faz o envio ao Debug;</li>
+	<li><b>Twitter Out:</b> Faz a postagem do aviso caso seja necessária.</li>
+	<li><b>Debug:</b> Escreve no console o dado recebido(Number).</li>
+	<h3>Dados exibidos no <b>Gauge</b>: </h3>
 	<ul>
 		<li>Luminosidade;</li>
 		<li>Temperatura;</li>
@@ -146,3 +165,4 @@ Adicione o link para assistir ao vídeo do projeto funcionando.
 
 * [Node-red](https://nodered.org/docs/getting-started/local)
 * [SimulIDE](https://www.simulide.com/index.html)
+* [Node-red-node-twitter](http://lucbors.blogspot.com/2018/09/how-to-use-node-red-to-interact-with.html) 
