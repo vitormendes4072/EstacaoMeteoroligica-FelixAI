@@ -57,7 +57,6 @@
 <li>Para acessar o servidor, acesso no seu browser:</li>
 	
 	http://localhost:1880
-	
 </ol>
 <b>Download dos nós no node-red:</b>
 <p>Clique no canto superior direito, depois em "Manage palette"</p>
@@ -68,11 +67,7 @@
 <ol>
 <li>Preencha seus dados e crie uma conta de desenvolvedor no Twitter;</li>
 	
-	
 		http://developer.twitter.com/
-	
-	
-	
 <li>Depois de criada, clique no botão "Create an app" no canto superior direito;</li>
 <li>Selecione a opção "Hobbyist", depois "Making a bot";</li>
 <li>Preencha com os dados requeridos;</li>
@@ -114,8 +109,7 @@
 		<ul>
 			<li>Para acessá-la clique com a direita do mouse no arduino, depois em "Open Serial Port."</li>
 			<li>Para utilizar ela é só clicar no botão "Open" do lado esquerdo.</li>
-			<li>Ela abrirá a porta serial no seu computador, provavelmente COM3(porta de entrada) e COM4(porta de saída no
-				)</li>
+			<li>Ela abrirá a porta serial no seu computador, provavelmente COM3(porta de saída) e COM4(porta de entrada no node-red)</li>
 		</ul>
 		
 <h3>Nós: </h3>
@@ -159,14 +153,9 @@
 <p>Use o comando "ls -l" para listar os arquivos e cheque se fez o clone do projeto.</p>
 </ol>
 
-
-
-
 ## Link de vídeo demonstração
 
-Adicione o link para assistir ao vídeo do projeto funcionando.
-
-[Link para o video youtube](https://www.youtube.com/watch?v=toQmPJUypIU)
+[Nosso video no youtube](https://www.youtube.com/watch?v=toQmPJUypIU)
 
 
 ### Referências 
@@ -174,3 +163,4 @@ Adicione o link para assistir ao vídeo do projeto funcionando.
 * [Node-red](https://nodered.org/docs/getting-started/local)
 * [SimulIDE](https://www.simulide.com/index.html)
 * [Node-red-node-twitter](http://lucbors.blogspot.com/2018/09/how-to-use-node-red-to-interact-with.html) 
+* [Conexão m2m com Serial](https://www.youtube.com/watch?v=I6YIPL_p-L0)
