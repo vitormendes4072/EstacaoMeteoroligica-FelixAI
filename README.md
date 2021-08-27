@@ -15,6 +15,24 @@
 
 **Ano:**
 2021
+=======
+# Template para desenvolvimento e entrega de NAC
+
+Esse é um guia simples, o grupo pode e deve modificar o template conforme necessidade. 
+
+# ESTAÇÃO METEOROLÓGICA
+
+**nome dos alunos: João Paulo Pereira Macêdo - RM86353
+Lucas Pelosi de Almeida - RM85987
+Tiago de Brito Ferreira - RM 84267
+Karen Martins Silveira - RM 85282
+Vitor Mendes Olivério - RM 84609
+Mariana Alves de Oliveira Ribeiro - RM 86125
+
+**Turma: 2TDSG
+
+**Ano:** 2°ano - 4° semestre
+
 
 ## Objetivo / descrição do Projeto
 
@@ -156,7 +174,10 @@
 ## Link de vídeo demonstração
 
 [Nosso video no youtube](https://www.youtube.com/watch?v=toQmPJUypIU)
+=======
+Adicione o link para assistir ao vídeo do projeto funcionando.
 
+[Link para o video youtube](https://www.youtube.com/watch?v=toQmPJUypIU)
 
 ### Referências 
 
